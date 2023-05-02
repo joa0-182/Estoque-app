@@ -1,18 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Lista Clientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-button expand="block" routerLink="/create-cliente">Cadastrar Cliente</ion-button>
+  <br>
   <ion-item *ngFor="let cliente of listaClientes">
     <ion-label>
       <h1>{{cliente.id}}</h1>
       <h2>{{cliente.nome}}</h2>
       <a href="mailto:{{cliente.email}}">{{cliente.email}}</a>
     </ion-label>
-
   </ion-item>
 </ion-content>
