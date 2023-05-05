@@ -9,13 +9,18 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },  {
+  },
+  {
     path: 'lista-produtos',
     loadComponent: () => import('./lista-produtos/lista-produtos.page').then( m => m.ListaProdutosPage)
   },
   {
     path: 'create-cliente',
     loadComponent: () => import('./create-cliente/create-cliente.page').then( m => m.CreateClientePage)
+  },
+  {
+    path: 'alterar-cliente/:id',
+    loadComponent: () => import('./alterar-cliente/alterar-cliente.page').then( m => m.AlterarClientePage)
   },
 
 ];
