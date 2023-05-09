@@ -6,18 +6,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-    <br>
-    <ion-input type="name" fill="outline" label="Nome" labelPlacement="floating" helperText="Coloque o seu nome"
-      errorText="Nome invalido" [(ngModel)]="nome"></ion-input>
-    <br>
-    <ion-input type="email" fill="outline" label="Email" labelPlacement="floating" helperText="Coloque um email válido"
-      errorText="Invalid email" [(ngModel)]="email"></ion-input>
-    <br>
-    <ion-input type="password" fill="outline" label="Senha" labelPlacement="floating" helperText="Digite sua senha"
-      errorText="Invalid password" [(ngModel)]="senha"></ion-input>
-    <br>
-    <ion-input type="password" fill="outline" label="Confirme a senha" labelPlacement="floating" helperText="Confirme a senha"
-      errorText="Invalid password" [(ngModel)]="validarSenha"></ion-input>
-    <br>
-    <ion-button (click)="salvar()" expand="block" >Salvar alteração</ion-button>
+  <br>
+  <ion-input type="name" fill="outline" label="Nome" labelPlacement="floating" helperText="Coloque o seu nome"
+    errorText="Nome invalido" [(ngModel)]="nome"></ion-input>
+  <br>
+  <ion-input type="email" fill="outline" label="Email" labelPlacement="floating" helperText="Coloque um email válido"
+    errorText="Invalid email" [(ngModel)]="email"></ion-input>
+  <br>
+  <ion-input type="password" fill="outline" label="Senha" labelPlacement="floating" helperText="Digite sua senha"
+    errorText="Invalid password" [(ngModel)]="senha"></ion-input>
+  <br>
+  <ion-input type="password" fill="outline" label="Confirme a senha" labelPlacement="floating"
+    helperText="Confirme a senha" errorText="Invalid password" [(ngModel)]="validarSenha"></ion-input>
+  <br>
+  <ion-button (click)="salvar()" expand="block">Salvar Alteração</ion-button>
 </ion-content>

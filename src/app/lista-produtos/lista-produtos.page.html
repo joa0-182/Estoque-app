@@ -1,16 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>lista-produtos</ion-title>
+    <ion-title>Lista de Produtos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-button expand="block" routerLink="/create-cliente">Cadastrar Produto
+  </ion-button>
+  <br>
   <ion-item *ngFor="let produto of listaProdutos">
     <ion-label>
       <h1>{{produto.id}}</h1>
-      <h1>{{produto.titulo}}</h1>
+      <h2>{{produto.nomeProduto}}</h2>
       <p>{{produto.descricao}}</p>
-      <h1>{{produto.preco}}</h1>
+      <h2>{{produto.preco}}</h2>
     </ion-label>
+    <ion-button color="warning" (click)="alterarProduto(produto.id!)">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="excluirProduto(produto.id!)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
   </ion-item>
 </ion-content>

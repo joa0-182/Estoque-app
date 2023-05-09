@@ -44,9 +44,9 @@ export class ClientesService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  login(){}
+  // login(){}
 
-  loggout(){}
+  // loggout(){}
 
 
   exibirErro(erro: any): Observable<any>{

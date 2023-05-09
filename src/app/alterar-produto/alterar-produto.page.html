@@ -1,0 +1,23 @@
+<ion-header [translucent]="true" class="ion-padding">
+  <ion-toolbar>
+    <ion-title>Alterar Produto</ion-title>
+    <ion-button slot="end" routerLink="/lista-produtos">Voltar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <br>
+  <ion-input type="name" fill="outline" label="Produto" labelPlacement="floating" helperText="Digite o nome do produto"
+    errorText="Nome do produto invalido" [(ngModel)]="nomeProduto">
+  </ion-input>
+  <br>
+  <ion-input type="text" fill="outline" label="Descrição do Produto" labelPlacement="floating"
+    helperText="Coloque uma breve descrição do produto" errorText="Descrição Invalida" [(ngModel)]="descricao">
+  </ion-input>
+  <br>
+  <ion-input type="number" fill="outline" label="Preço" labelPlacement="floating" helperText="Digite o valor do produto"
+    errorText="Preço do Produto invalido" [(ngModel)]="preco">
+  </ion-input>
+  <br>
+  <ion-button (click)="salvar()" expand="block">Salvar Alteração</ion-button>
+</ion-content>

@@ -15,8 +15,11 @@ export class ProdutosService {
 
 
 
-  create(produto: Produto){
-    return this.http.post(this.url, produto);
+  create(produto: Produto): Observable<Produto>{
+    return this.http.post<Produto>(this.url, produto).pipe(
+      map(retorno => retorno),
+      catchError((erro) => this.exibirErro(erro))
+    );
   }
 
   getAll(): Observable<Produto[]>{
@@ -26,12 +29,18 @@ export class ProdutosService {
     );
   }
 
-  getOne(id: number){
-    return this.http.get(`${this.url} / ${id}}`);
+  getOne(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${this.url} / ${id}}`).pipe(
+      map(retorno => retorno),
+      catchError((erro) => this.exibirErro(erro))
+    );
   }
 
-  update(produto: Produto){
-    return this.http.put(`${this.url} / ${produto.id}`, produto);
+  update(produto: Produto): Observable<Produto>{
+    return this.http.put<Produto>(`${this.url} / ${produto.id}`, produto).pipe (
+      map(retorno => retorno),
+      catchError((erro) => this.exibirErro(erro))
+    );
   }
 
   delete(id: number){
@@ -43,6 +52,5 @@ export class ProdutosService {
     console.log(erro);
     return EMPTY;
   }
-
 }
 
