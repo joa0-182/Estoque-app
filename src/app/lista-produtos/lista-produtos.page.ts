@@ -16,9 +16,6 @@ import { AlertController } from '@ionic/angular';
 })
 export class ListaProdutosPage{
 
-  handlerMessage = 'teste';
-  roleMessage = 'teste';
-
   listaProdutos: Produto[] = [];
 
   constructor(private produtoService: ProdutosService, private router: Router, private alertController: AlertController) {}
