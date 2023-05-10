@@ -16,7 +16,7 @@ export class ProdutosService {
 
 
   create(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>(this.url, produto).pipe(
+    return this.http.post<Produto>(this.url,produto).pipe(
       map(retorno => retorno),
       catchError((erro) => this.exibirErro(erro))
     );
@@ -30,14 +30,14 @@ export class ProdutosService {
   }
 
   getOne(id: number): Observable<Produto> {
-    return this.http.get<Produto>(`${this.url} / ${id}}`).pipe(
+    return this.http.get<Produto>(`${this.url}/${id}`).pipe(
       map(retorno => retorno),
       catchError((erro) => this.exibirErro(erro))
     );
   }
 
   update(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>(`${this.url} / ${produto.id}`, produto).pipe (
+    return this.http.put<Produto>(`${this.url}/${produto.id}`,produto).pipe (
       map(retorno => retorno),
       catchError((erro) => this.exibirErro(erro))
     );

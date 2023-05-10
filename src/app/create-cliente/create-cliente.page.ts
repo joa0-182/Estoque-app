@@ -34,7 +34,7 @@ export class CreateClientePage implements OnInit {
         senha: this.senha
       };
       this.clienteService.create(cliente).subscribe((dados) => {
-        window.alert(`Cliente inserido: ${dados.id}`);
+        window.alert(`Cliente inserido!\nId Cliente: ${dados.id}\nCliente inserido: ${dados.nome}`);
         this.route.navigateByUrl('/home');
       });
     } else {

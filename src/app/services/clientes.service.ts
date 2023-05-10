@@ -34,7 +34,7 @@ export class ClientesService {
   }
 
   update(cliente: Cliente): Observable<Cliente>{
-    return this.http.put<Cliente>(`${this.url}/${cliente.id}`, cliente) .pipe(
+    return this.http.put<Cliente>(`${this.url}/${cliente.id}`, cliente).pipe(
       map(retorno => retorno),
       catchError((erro) => this.exibirErro(erro))
     );

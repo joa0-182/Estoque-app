@@ -33,8 +33,8 @@ export class CreateProdutoPage implements OnInit {
         nome_imagem: this.nome_imagem
      };
      this.produtoService.create(produto).subscribe((dados) => {
-       window.alert(`Concluido com exito: ${dados.id}`);
-       this.route.navigateByUrl('/home')
+       window.alert(`Concluido com exito!\nId Produto: ${dados.id}\nProduto inserido: ${dados.nomeProduto}`);
+       this.route.navigateByUrl('/lista-produtos')
      });
     
   }

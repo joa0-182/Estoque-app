@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" routerLink="/create-cliente">Cadastrar Produto
+  <ion-button expand="block" routerLink="/create-produto">Cadastrar Produto
   </ion-button>
   <br>
   <ion-item *ngFor="let produto of listaProdutos">
     <ion-label>
       <h1>{{produto.id}}</h1>
-      <h2>{{produto.nomeProduto}}</h2>
+      <h1>{{produto.nomeProduto}}</h1>
       <p>{{produto.descricao}}</p>
       <h2>{{produto.preco}}</h2>
     </ion-label>
