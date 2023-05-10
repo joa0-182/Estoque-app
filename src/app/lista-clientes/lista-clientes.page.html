@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" class="ion-padding">
+  <ion-toolbar>
+    <ion-title>
+      Lista Clientes
+    </ion-title>
+    <ion-button slot="end" routerLink="/home">Voltar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-button expand="block" routerLink="/create-cliente">Cadastrar Cliente</ion-button>
+  <br>
+  <ion-item *ngFor="let cliente of listaClientes">
+    <ion-label>
+      <h1>{{cliente.id}}</h1>
+      <h2>{{cliente.nome}}</h2>
+      <a href="mailto:{{cliente.email}}">{{cliente.email}}</a>
+    </ion-label>
+    <ion-button color="warning" (click)="alterarCliente(cliente.id!)">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="confirmarExclusao(cliente.id!)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
+
+  </ion-item>
+</ion-content>

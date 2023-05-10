@@ -45,7 +45,7 @@ export class AlterarClientePage implements OnInit {
       };
       this.clienteService.update(cliente).subscribe((dados) => {
         window.alert(`Concluido com exito!\nCliente alterado: ${dados.id} -> ${dados.nome}`);
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/lista-clientes');
       });
     } else {
       window.alert('Senha não conferem');

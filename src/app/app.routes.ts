@@ -19,6 +19,10 @@ export const routes: Routes = [
     loadComponent: () => import('./alterar-cliente/alterar-cliente.page').then( m => m.AlterarClientePage)
   },
   {
+    path: 'lista-clientes',
+    loadComponent: () => import('./lista-clientes/lista-clientes.page').then( m => m.ListaClientesPage)
+  },
+  {
     path: 'lista-produtos',
     loadComponent: () => import('./lista-produtos/lista-produtos.page').then( m => m.ListaProdutosPage)
   },
@@ -29,7 +33,5 @@ export const routes: Routes = [
   {
     path: 'alterar-produto/:id',
     loadComponent: () => import('./alterar-produto/alterar-produto.page').then( m => m.AlterarProdutoPage)
-  },
-
-
+  }
 ];
