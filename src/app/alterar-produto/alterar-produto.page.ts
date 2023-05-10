@@ -39,12 +39,13 @@ export class AlterarProdutoPage implements OnInit {
   }
   salvar(){
     const produto: Produto = {
+      id: this.id,
       nomeProduto: this.nomeProduto,
       descricao: this.descricao,
       preco: this.preco,
       nome_imagem: this.nome_imagem
    };
-   this.produtoService.update(produto).subscribe((dados) => 
+   this.produtoService.update(produto).subscribe((dados) =>
    {
      window.alert(`Concluido com exito!\nProduto alterado: ${dados.id} -> ${dados.nomeProduto}`);
      this.router.navigateByUrl('/lista-produtos')

@@ -43,8 +43,11 @@ export class ProdutosService {
     );
   }
 
-  delete(id: number){
-    return this.http.delete(`${this.url}/${id}`);
+  delete(id: number): Observable<Produto>{
+    return this.http.delete<Produto>(`${this.url}/${id}`).pipe (
+      map(retorno => retorno),
+      catchError((erro) => this.exibirErro(erro))
+    );
   }
 
   exibirErro(erro: any): Observable<any> {

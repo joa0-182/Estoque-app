@@ -27,7 +27,7 @@ export class AlterarClientePage implements OnInit {
     private clienteService: ClientesService
   ) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
 
     this.clienteService.getOne(this.id).subscribe(retorno => {
@@ -35,7 +35,7 @@ export class AlterarClientePage implements OnInit {
       this.email = retorno.email ? retorno.email : '';
     })
   }
-  salvar(){ 
+  salvar(){
     if(this.senha === this.validarSenha) {
       const cliente: Cliente = {
         id: this.id,
@@ -44,7 +44,7 @@ export class AlterarClientePage implements OnInit {
         senha: this.senha
       };
       this.clienteService.update(cliente).subscribe((dados) => {
-        window.alert(`Cliente alterado: ${dados.id}`);
+        window.alert(`Concluido com exito!\nCliente alterado: ${dados.id} -> ${dados.nome}`);
         this.router.navigateByUrl('/home');
       });
     } else {

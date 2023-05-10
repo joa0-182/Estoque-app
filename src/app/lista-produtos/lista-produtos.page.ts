@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { Produto } from '../models/Produto.models';
 import { ProdutosService } from '../services/produtos.service';
 import { Router, RouterLink } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-lista-produtos',
@@ -14,9 +16,12 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class ListaProdutosPage{
 
+  handlerMessage = 'teste';
+  roleMessage = 'teste';
+
   listaProdutos: Produto[] = [];
 
-  constructor(private produtoService: ProdutosService, private router: Router) {}
+  constructor(private produtoService: ProdutosService, private router: Router, private alertController: AlertController) {}
 
   ionViewWillEnter() {
     this.buscarProdutos();
@@ -33,6 +38,30 @@ export class ListaProdutosPage{
   }
 
   excluirProduto(id: number) {
-    this.router.navigateByUrl(`/alterar-produto/${id}`);
+    this.produtoService.delete(id).subscribe(() => {
+      this.listaProdutos = this.listaProdutos.filter(p => p.id !==id);
+    });
+  }
+
+  async confirmarExclusao(id: number) {
+    const alert = await this.alertController.create({
+      header: 'Confirmar exclusão',
+      message: 'Tem certeza que deseja excluir este produto?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Excluir',
+          handler: () => {
+            this.excluirProduto(id);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
+
