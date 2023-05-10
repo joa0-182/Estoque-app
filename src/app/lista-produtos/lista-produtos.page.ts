@@ -17,6 +17,8 @@ import { AlertController } from '@ionic/angular';
 export class ListaProdutosPage{
 
   listaProdutos: Produto[] = [];
+  searchTerm: string = '';
+  produto: any;
 
   constructor(private produtoService: ProdutosService, private router: Router, private alertController: AlertController) {}
 

@@ -17,7 +17,7 @@ export class CreateProdutoPage implements OnInit {
 
   nomeProduto = '';
   descricao = '';
-  preco = 0
+  preco = 0;
   nome_imagem = '';
 
   constructor(private produtoService: ProdutosService, private route:Router ) { }
@@ -25,7 +25,7 @@ export class CreateProdutoPage implements OnInit {
   ngOnInit() {
   }
 
-  salvar(){ 
+  salvar(){
      const produto: Produto = {
         nomeProduto: this.nomeProduto,
         descricao: this.descricao,
@@ -36,7 +36,7 @@ export class CreateProdutoPage implements OnInit {
        window.alert(`Concluido com exito!\nId Produto: ${dados.id}\nProduto inserido: ${dados.nomeProduto}`);
        this.route.navigateByUrl('/lista-produtos')
      });
-    
+
   }
 
 

@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" routerLink="/create-cliente">Cadastrar Cliente</ion-button>
   <br>
   <ion-item *ngFor="let cliente of listaClientes">
     <ion-label>
@@ -22,6 +21,10 @@
     <ion-button color="danger" (click)="confirmarExclusao(cliente.id!)">
       <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
     </ion-button>
-
   </ion-item>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" routerLink="/create-cliente">Cadastrar Cliente</ion-button>
+  </ion-toolbar>
+</ion-footer>
