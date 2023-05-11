@@ -35,7 +35,7 @@ export class CreateClientePage implements OnInit {
       };
       this.clienteService.create(cliente).subscribe((dados) => {
         window.alert(`Cliente inserido!\nId Cliente: ${dados.id}\nCliente inserido: ${dados.nome}`);
-        this.route.navigateByUrl('/home');
+        this.route.navigateByUrl('/lista-clientes');
       });
     } else {
       window.alert('Senha não conferem');
