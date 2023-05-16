@@ -20,7 +20,7 @@ export class ListaProdutosPage{
   searchTerm: string = '';
   produto: any;
 
-  constructor(private produtoService: ProdutosService, private router: Router, private alertController: AlertController) {}
+  constructor(private produtoService: ProdutosService, private router: Router, private alertController: AlertController) { }
 
   ionViewWillEnter() {
     this.buscarProdutos();
